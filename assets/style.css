@@ -1,0 +1,20 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+table {
+  border-collapse: collapse;
+  width: 30%;
+}
+table > tbody > tr > td {
+  border: 2px solid #000;
+  vertical-align: middle;
+  text-align: center;
+}
+
