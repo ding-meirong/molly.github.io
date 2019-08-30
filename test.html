@@ -1,0 +1,108 @@
+<html>
+<head>
+	<style type="text/css">
+		img{
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			box-shadow: -10px 0px 10px 1px #aaaaaa;
+			border-radius: 20px
+		}
+
+		ul>li{
+			position: absolute;
+		}
+
+		#switch{
+			position: relative;
+			z-index: 9999;
+			margin-top: -20%
+		}
+
+		#switch:before{
+			content: "";
+			border-width: 0 0 10px 10px;
+			border-style: solid;
+			border-color: pink;
+			width: 50px;
+			height: 50px;
+			display: inline-block;
+			transform: rotate(45deg);
+			position: absolute;
+			left: 25%
+		}
+
+		#switch:after{
+			content: "";
+			border-width: 10px 10px 0 0;
+			border-style: solid;
+			border-color: pink;
+			width: 50px;
+			height: 50px;
+			display: inline-block;
+			transform: rotate(45deg);
+			position: absolute;
+			right: 25%
+		}
+
+	</style>
+</head>
+<body style="height: 100%; overflow: hidden;">
+	<div style="height:10%; text-align: center">
+		<div style="position: relative; top: 50%">Header</div>
+	</div>
+	<hr>
+	<div style="height:5%; display: flex">
+		<ul style="list-style-type: none">
+			<li>Home</li>
+			<li style="padding-left: 5%">Intro</li>
+			<li style="padding-left: 10%">Contact</li>
+		</ul>
+	</div>
+	<hr>
+	<div id="container" style="height:80%">
+		<img style="z-index:0; left: 0"   src="1.jpg" />
+		<img style="z-index:1; left: 5%"  src="2.jpg" />
+		<img style="z-index:2; left: 10%" src="3.jpg" />
+		<img style="z-index:3; left: 15%" src="4.jpg" />
+		<img style="z-index:4; left: 80%" src="5.jpg" />
+		<img style="z-index:5; left: 85%" src="6.jpg" />
+		<img style="z-index:6; left: 90%" src="7.jpg" />
+		<img style="z-index:7; left: 95%" src="8.jpg" />
+	</div>
+	<div style="height:5%; text-align: center">
+		<div style="position: relative; top: 50%">Footer</div>
+	</div>
+	<!-- <div id="switch"></div> -->
+	<script type="text/javascript">
+		let currentId = 4;
+		setInterval(function(){
+			reset(currentId);
+			currentId = currentId + 1;
+			if(currentId > 7){
+				currentId = 0;
+			}
+		}, 2000)
+
+		let imgs = document.querySelector("#container").children;
+		for(let i=0;i<imgs.length; i++){
+			imgs[i].addEventListener("mouseover", ()=>{
+				currentId = i;
+				reset(i);
+			});
+		}
+
+		function reset(currentId){
+			let i = currentId;
+			for(let j=0; j<i+1 ; j++){
+					imgs[j].style.left = 5 * j + "%";
+				}
+
+				for(let j=i+1; j<imgs.length;j++){
+					imgs[j].style.left = 100 - 5 * (imgs.length - j) + "%";
+				}
+		}
+		
+	</script>
+</body>
+</html>
