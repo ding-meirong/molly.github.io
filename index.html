@@ -1,0 +1,62 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body style="height: 100%; overflow: hidden;">
+	<div style="height:10%; text-align: center">
+		<div style="position: relative; top: 50%">Header</div>
+	</div>
+	<hr>
+	<div style="height:5%; position: relative; z-index: 9">
+		<ul id="menu" style="list-style-type: none">
+			<li style="left: 5%" onmousemove="openHomeDropDown()" onmouseout="closeHomeDropDown()">
+				<div class="menu-item">Home</div>
+				<div id="home-drop-down" class="menu-drop-down">
+					<ul style="list-style-type: none">
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+					</ul>
+				</div>
+			</li>
+			<li style="left: 12%" onmousemove="openIntroDropDown()" onmouseout="closeIntroDropDown()">
+				<div class="menu-item">Intro</div>
+				<div id="intro-drop-down" class="menu-drop-down">
+					<ul style="list-style-type: none">
+						<li>11</li>
+						<li>12</li>
+					</ul>
+				</div>
+			</li>
+			<li style="left: 18%" onmousemove="openContactDropDown()" onmouseout="closeContactDropDown()">
+				<div class="menu-item">Contact</div>
+				<div id="contact-drop-down" class="menu-drop-down">
+					<ul style="list-style-type: none">
+						<li>111</li>
+						<li>112</li>
+						<li>113</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</div>
+	
+	<hr>
+	<div id="container" style="height:80%; display: none">
+		<img style="z-index:0; left: 0"   src="img/1.jpg" />
+		<img style="z-index:1; left: 2%"  src="img/2.jpg" />
+		<img style="z-index:2; left: 4%" src="img/3.jpg" />
+		<img style="z-index:3; left: 6%" src="img/4.jpg" />
+		<img style="z-index:4; left: 92%" src="img/5.jpg" />
+		<img style="z-index:5; left: 94%" src="img/6.jpg" />
+		<img style="z-index:6; left: 96%" src="img/7.jpg" />
+		<img style="z-index:7; left: 98%" src="img/8.jpg" />
+	</div>
+	<div style="height:5%; text-align: center">
+		<div style="position: relative; top: 50%">Footer</div>
+	</div>
+	<!-- <div id="switch"></div> -->
+	<script src="app.js"></script>
+</body>
+</html>
